@@ -1,0 +1,21 @@
+.expenses-filter {
+    color: white;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 1rem;
+  }
+  
+  .expenses-filter_control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+.select-formFilter{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  

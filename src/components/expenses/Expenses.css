@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.ul {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 28px 16px;
+}
+
+.ul-div {
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background: rgb(83, 81, 81);
+}
