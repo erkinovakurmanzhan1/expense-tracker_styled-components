@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ExpenseForm } from "../expense-form/ExpenseForm";
 import Button from "../UI/Button/Button";
-import './NewExpenses.css'
+import styled from "styled-components";
 
 export const NewExpenses = ({onNewExpenseAdd}) => {
   const [showForm, setShowForm] = useState(false);
@@ -12,12 +12,18 @@ export const NewExpenses = ({onNewExpenseAdd}) => {
   };
 
   return (
-    <div className="div1">
+    <NewexpenseDivS>
       {showForm ? (
         <ExpenseForm onShowForm={showExpenseForm}  onNewExpenseAdd={onNewExpenseAdd} />
       ) : (
         <Button title="add new expense" onClick={showExpenseForm} />
       )}
-    </div>
+    </NewexpenseDivS>
   );
 };
+const NewexpenseDivS=styled.div`
+    border-radius: 10px;
+    padding: 30px;
+    width: 48.75rem;
+    background-color: #AD9BE9;
+`

@@ -1,8 +1,8 @@
 import React from "react";
-import "./Chart.css";
 import ChartBar from "./ChartBar";
+import styled from "styled-components";
 
-const Chart = ({items}) => {
+const Chart = ({ items }) => {
   const maximumPrice = 2000;
   const months = [
     {
@@ -43,7 +43,7 @@ const Chart = ({items}) => {
     },
     {
       label: "November",
-      currentPrice:0,
+      currentPrice: 0,
     },
     {
       label: "December",
@@ -51,14 +51,14 @@ const Chart = ({items}) => {
     },
   ];
 
-  items.forEach(item => {
-    const monthNumber = new Date(item.date).getMonth()
-    months[monthNumber].currentPrice += item.price
+  items.forEach((item) => {
+    const monthNumber = new Date(item.date).getMonth();
+    months[monthNumber].currentPrice += item.price;
   });
   console.log(months);
 
   return (
-    <div className="chart">
+    <ChartStyled>
       {months.map((item) => {
         return (
           <ChartBar
@@ -69,8 +69,19 @@ const Chart = ({items}) => {
           />
         );
       })}
-    </div>
+    </ChartStyled>
   );
 };
 
 export default Chart;
+
+const ChartStyled = styled.div`
+  margin-top: 90px;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f8dfff;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
+`;

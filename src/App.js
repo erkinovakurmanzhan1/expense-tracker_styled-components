@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './App.css';
+import styled from "styled-components";
+import './App.css'
 import { Expenses } from './components/expenses/Expenses';
 import { NewExpenses } from './components/new-expense/NewExpenses';
 
@@ -37,14 +38,28 @@ setExpenses(upwardExpenses)
 
 }
 
-  return ( <div className='App'>
-    <div className="item">
+  return ( <AppStyled>
+    <ItemS>
      <NewExpenses onNewExpenseAdd={addNewExpenseHandler}/>
      <Expenses expenses={expenses}/>
-    </div>
-    </div>
+    </ItemS>
+    </AppStyled>
   );
 }
 
 
 export default App;
+
+
+const AppStyled = styled.div`
+display: flex;
+  justify-content: center;
+  background-color:  #3F3F3F;
+  width: 100%;
+  height: 100%;
+`
+
+const ItemS= styled.div`
+ text-align: center;
+width: 780px;
+`

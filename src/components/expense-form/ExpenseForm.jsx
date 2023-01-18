@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Button from "../UI/Button/Button";
 import FormInput from "../UI/form-input/FormInput";
-import "./ExpensesForm.css";
+import styled from "styled-components";
 
 export const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
@@ -46,7 +46,7 @@ export const ExpenseForm = (props) => {
   };
 
   return (
-    <form className="form">
+    <FormStyled>
         <FormInput
           id="text"
           labelName="Название"
@@ -75,14 +75,30 @@ export const ExpenseForm = (props) => {
         />
     
 
-      <div className="buttonStyle">
+      < BtnStyled>
         <Button title="Отмена" onClick={cancelHenler} />
         <Button
           title="Сохранить"
           onClick={saveHandler}
           disabled={!date || !title || !price}
         />
-      </div>
-    </form>
+      </ BtnStyled>
+    </FormStyled>
   );
 };
+
+const FormStyled = styled.form`
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
+
+
+const BtnStyled=styled.div`
+  margin-top: 2rem;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  margin-left: 120px;
+`
